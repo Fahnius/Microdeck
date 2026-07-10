@@ -6,11 +6,11 @@ The micro:bit sends a number via a UART connection, and the Python script on the
 
 ## Features (for Version 1.0)
 
-- Y on microbit  -> opens Youtube in your browser
-- ~ on microbit  -> pauses current media player
-- > on microbit  -> skips current media player
-- < on microbit  -> go to previous media
-- T on microbit  -> opens Twitch in your browser
+- 'Y' on microbit  -> opens Youtube in your browser
+- '~' on microbit  -> pauses current media player
+- '>' on microbit  -> skips current media player
+- '<' on microbit  -> go to previous media
+- 'T' on microbit  -> opens Twitch in your browser
 
 ## Requirements
 
