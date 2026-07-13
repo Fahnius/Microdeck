@@ -1,9 +1,14 @@
 import serial
 import webbrowser
 import pyautogui
+from pycaw.pycaw import AudioUtilities
 
 #Port
 ser = serial.Serial('COM4', 115200)
+
+device = AudioUtilities.GetSpeakers()
+volume = device.EndpointVolume
+
 
 def callYoutube():
     url = "https://www.youtube.com/"
@@ -30,7 +35,10 @@ while True:
     if line:
         try:
             number = int(line)
-            print("Empfangene Zahl:", number)
-            actions[number]()
+            print("Number received:", number)
+            if number >= 20:
+                volume.SetMasterVolumeLevelScalar((number-20) / 100.0, None)
+            else:
+                actions[number]()
         except ValueError:
-            print("Kein gültiger int:", line)
+            print("No valid int:", line)
